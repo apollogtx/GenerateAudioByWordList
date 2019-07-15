@@ -42,7 +42,7 @@ def AssembleNum(aInt):
         hundredIndex = int(aInt / 100)
         tensIndex = int((aInt % 100) / 10)
         singleIndex = aInt % 10
-        print(hundredIndex, tensIndex, singleIndex)
+
         if aInt % 100 == 0:
             print('%100 == 0')
             readStrArray = [firstTwenty[hundredIndex], 'hundred']
@@ -85,7 +85,7 @@ if not os.path.exists("WordListWaitRead.xlsx"):
 checkAudioExist = True
 for i in range(0, 26):
     checkAudioPath = os.path.join('Lingoes English', chr(65 + i))
-    # print(checkAudioPath)
+
     if not os.path.exists(checkAudioPath):
         WriteErrorLog('%s，本地声音文件目录缺失！' % checkAudioPath)
         WriteErrorLog('http://www.lingoes.cn/zh/translator/speech.htm 请下载灵格斯基础英语语音库，并重新解压到，Lingoes English 目录')
@@ -109,7 +109,6 @@ iDTimeValue = wb['Config']['B5'].value
 innerDurationTime = AudioSegment.silent(duration=iDTimeValue)
 dTimeValue = wb['Config']['B6'].value
 durationTime = AudioSegment.silent(duration=dTimeValue)
-# print(iDTimeValue, dTimeValue)
 
 while True:
     word = wb['WordList']['B' + str(i)].value
@@ -117,7 +116,6 @@ while True:
         break
 
     word = word.strip()
-    print('[%s]' % word)
 
     if not IsAlphabet(word):
         print('%i %s 写入' % (i, word))
@@ -129,14 +127,11 @@ while True:
     readGroupAudio = AudioSegment.empty()
     if wb['Config']['B7'].value == '朗读序号':
         readNumAudio = AssembleNum(i - 1)
-        print('wordNum %d' % i)
     elif wb['Config']['B7'].value == '朗读分组 5/组':
         if (i % 5) == 2:
-            print('Group i=%d' % i)
             readGroupAudio = ReturnWordAudio('Group') + AssembleNum(int(i / 5) + 1)
     elif wb['Config']['B7'].value == '朗读分组 10/组':
         if (i % 10) == 2:
-            print('Group i=%d' % i)
             readGroupAudio = ReturnWordAudio('Group') + AssembleNum(int(i / 10) + 1)
 
     wordAudio = wordAudio + (ReturnWordAudio(word) + innerDurationTime) * rTimes + durationTime
