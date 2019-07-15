@@ -8,7 +8,7 @@
 * 如果有道词典也无法找到，则写入错误日志
 
 ## 2.使用方法
-### 2.1 非 Python 环境
+### 2.1 直接运行 .exe
 1. AssembleAudio 文件夹；
 2. WordListWaitRead.xlsx，放置位置 AssembleAudio\WordListWaitRead.xlsx
 3. 下载灵格斯语音包 http://www.lingoes.cn/zh/translator/speech.htm ，将 灵格斯基础英语语音库 Lingoes English.zip，解压到 AssembleAudio 文件夹
