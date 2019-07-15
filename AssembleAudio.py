@@ -135,6 +135,7 @@ while True:
             readGroupAudio = ReturnWordAudio('Group') + AssembleNum(int(i / 10) + 1)
 
     wordAudio = wordAudio + (ReturnWordAudio(word) + innerDurationTime) * rTimes + durationTime
+    print('[%s] append AssembleAudio.mp3' % word)
     i += 1
 
 wordAudio.export('AssembleAudio.mp3', format='mp3')
