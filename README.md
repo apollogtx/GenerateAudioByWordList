@@ -13,6 +13,7 @@
 * 文件夹结构为 AssembleAudio\Lingoes English\A-Z
 4. 下载 ffmpeg-20190707-2bd21b9-win64-static.zip，下载地址 https://ffmpeg.zeranoe.com/builds/
 * 将 bin 路径加入环境变量；如解压位置在C盘，加入环境变量的字符串为 C:\ffmpeg-20190707-2bd21b9-win64-static\bin
+* pydub 依赖该工具处理音频文件
 5. 双击运行 AssembleAudio.exe
 6. 在 AssembleAudio 文件夹下，获得 WordListWaitRead.xlsx 中 WordList 对应的朗读列表；
 7. 未能成功匹配到的单词，会记录在 ErrorLog.txt，位置为 AssembleAudio\ErrorLog.txt
